@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Handoff: rock, paper, scissors</title>
+    <meta
+      name="description"
+      content="Play rock-paper-scissors with your webcam. Everything runs in your browser."
+    />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <h1>Handoff</h1>
+      <nav aria-label="Screens">
+        <a href="#play" data-nav="play">Play</a>
+        <a href="#train" data-nav="train">Train on my hand</a>
+        <a href="#about" data-nav="about">About</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <section id="camera-panel" class="camera" aria-label="Camera">
+        <div class="video-wrap">
+          <video id="video" playsinline muted aria-label="Your webcam (mirrored)"></video>
+          <p id="seeing" class="seeing" aria-live="polite">Camera off</p>
+        </div>
+        <button id="start-camera" type="button">Start camera</button>
+      </section>
+
+      <section id="screen-play" data-screen="play" aria-labelledby="play-h">
+        <h2 id="play-h">Play</h2>
+        <p>
+          Show rock, paper or scissors to the camera, then press <kbd>Space</kbd> or the button.
+        </p>
+        <button id="play-round" type="button" class="primary">Play round</button>
+        <p id="result" class="result" aria-live="assertive"></p>
+        <dl class="score" aria-label="Score">
+          <div>
+            <dt>You</dt>
+            <dd id="score-player">0</dd>
+          </div>
+          <div>
+            <dt>Computer</dt>
+            <dd id="score-computer">0</dd>
+          </div>
+          <div>
+            <dt>Draws</dt>
+            <dd id="score-draws">0</dd>
+          </div>
+        </dl>
+        <button id="reset-score" type="button">Reset score</button>
+      </section>
+
+      <section id="screen-train" data-screen="train" aria-labelledby="train-h" hidden>
+        <h2 id="train-h">Train on my hand</h2>
+        <p>
+          Hold a gesture in front of the camera and press its button. Samples are kept in this tab's
+          memory only. Record each gesture a few times, at different angles and with both hands.
+        </p>
+        <div class="record-row">
+          <button type="button" data-record="rock">
+            Record rock (<span data-count="rock">0</span>)
+          </button>
+          <button type="button" data-record="paper">
+            Record paper (<span data-count="paper">0</span>)
+          </button>
+          <button type="button" data-record="scissors">
+            Record scissors (<span data-count="scissors">0</span>)
+          </button>
+        </div>
+        <button id="train-knn" type="button" class="primary">Train my model</button>
+        <fieldset>
+          <legend>Models used when playing</legend>
+          <label
+            ><input type="checkbox" id="use-base" checked /> Base model (from the image
+            dataset)</label
+          >
+          <label
+            ><input type="checkbox" id="use-personal" checked /> My model (from my samples)</label
+          >
+        </fieldset>
+        <button id="download-samples" type="button">Download my samples (JSON)</button>
+        <button id="clear-samples" type="button">Clear samples</button>
+      </section>
+
+      <section id="screen-about" data-screen="about" aria-labelledby="about-h" hidden>
+        <h2 id="about-h">About</h2>
+        <p>
+          Handoff finds 21 points on your hand with MediaPipe, turns them into 63 numbers, and a
+          small classifier guesses rock, paper or scissors. All of this runs in your browser.
+          <strong>No video or images are uploaded or stored.</strong> Recorded samples stay in
+          memory until you download them or close the tab.
+        </p>
+        <p id="model-info"></p>
+        <h3>Image attributions</h3>
+        <p>
+          The base model was trained on landmarks from these openly licensed images (CC0, public
+          domain, or CC BY where noted). The hand landmark model is by Google MediaPipe (Apache
+          2.0).
+        </p>
+        <ul id="attributions" class="attributions"></ul>
+      </section>
+    </main>
+    <script type="module" src="./src/ui.js"></script>
+  </body>
+</html>

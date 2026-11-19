@@ -1,0 +1,8 @@
+{"batchcomplete": "", "query": {"pages": {
+ "1": {"pageid": 1, "title": "File:A.jpg", "imageinfo": [{"url": "https://upload.wikimedia.org/A.jpg?utm_source=x",
+   "descriptionurl": "https://commons.wikimedia.org/wiki/File:A.jpg?utm_source=x", "thumburl": "https://upload.wikimedia.org/thumb.jpg?x=1",
+   "mime": "image/jpeg", "extmetadata": {"License": {"value": "pd"}, "Artist": {"value": "<a href=\"u\">Some Author</a>"}}}]},
+ "2": {"pageid": 2, "title": "File:B.jpg", "imageinfo": [{"url": "https://upload.wikimedia.org/B.jpg", "descriptionurl": "d",
+   "mime": "image/jpeg", "extmetadata": {"License": {"value": "cc-by-sa-4.0"}, "LicenseUrl": {"value": "https://cc/by-sa"}}}]},
+ "3": {"pageid": 3, "title": "File:C.svg", "imageinfo": [{"url": "u", "mime": "image/svg+xml"}]}
+}}}

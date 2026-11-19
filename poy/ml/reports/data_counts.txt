@@ -1,0 +1,4 @@
+label     downloaded  had_hand  kept(one hand)
+rock             293        42              27
+paper            400        25              15
+scissors         298        58              35

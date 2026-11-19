@@ -1,0 +1,171 @@
+:root {
+  --bg: #f7f7f5;
+  --fg: #1d1d1b;
+  --muted: #5d5d58;
+  --card: #ffffff;
+  --accent: #1f5fbf;
+  --accent-fg: #ffffff;
+  --border: #d6d6d0;
+  --focus: #e8590c;
+  color-scheme: light dark;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615;
+    --fg: #ececea;
+    --muted: #a8a8a2;
+    --card: #222220;
+    --accent: #6ea8ff;
+    --accent-fg: #0b0b0a;
+    --border: #3a3a37;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+}
+header,
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: baseline;
+  padding-top: 16px;
+}
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+nav a {
+  color: var(--accent);
+}
+nav a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration-thickness: 3px;
+}
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 16px;
+  top: 8px;
+}
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+button {
+  font: inherit;
+  padding: 8px 16px;
+  margin: 4px 8px 4px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--fg);
+  cursor: pointer;
+}
+button.primary {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+button[aria-pressed="true"] {
+  outline: 2px dashed var(--accent);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.status:empty {
+  display: none;
+}
+.status {
+  padding: 8px 12px;
+  border-left: 4px solid var(--focus);
+  background: var(--card);
+}
+.video-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 4 / 3;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* mirror so it feels like a mirror */
+}
+.seeing {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  margin: 0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgb(0 0 0 / 70%);
+  color: #fff;
+  font-weight: 600;
+}
+.result {
+  font-size: 1.25rem;
+  font-weight: 600;
+  min-height: 1.9em;
+}
+.score {
+  display: flex;
+  gap: 24px;
+}
+.score div {
+  text-align: center;
+}
+.score dt {
+  color: var(--muted);
+}
+.score dd {
+  margin: 0;
+  font-size: 2rem;
+  font-variant-numeric: tabular-nums;
+}
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 12px 0;
+}
+fieldset label {
+  display: block;
+}
+.attributions {
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+kbd {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0 4px;
+}

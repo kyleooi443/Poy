@@ -1,0 +1,18 @@
+model comparison (grouped CV macro-F1 on train | holdout macro-F1):
+  logistic_regression  0.351 | 0.252  <- exported
+  mlp                  0.332 | 0.353
+  random_forest        0.429 | 0.370
+
+holdout report for logistic_regression:
+accuracy 0.304   macro-F1 0.252   n_test 46
+
+class      precision  recall     f1  support
+rock           0.800   0.333  0.471       24
+paper          0.000   0.000  0.000       16
+scissors       0.167   1.000  0.286        6
+
+confusion matrix (rows = true, cols = predicted)
+                rock     paper  scissors
+rock               8         0        16
+paper              2         0        14
+scissors           0         0         6
