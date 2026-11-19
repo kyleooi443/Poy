@@ -11,7 +11,8 @@
     "test": "vitest run",
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
-    "smoke": "node tests/e2e/smoke.mjs"
+    "smoke": "node tests/e2e/smoke.mjs",
+    "screenshots": "node tests/e2e/screenshots.mjs"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "1.2.2"

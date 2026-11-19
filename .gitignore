@@ -2,9 +2,9 @@
 __pycache__/
 .pytest_cache/
 .ruff_cache/
-poy/ml/.venv/
-poy/ml/data/*
-!poy/ml/data/manifest.csv
-poy/web/node_modules/
-poy/web/dist/
-poy/web/public/wasm/
+ml/.venv/
+ml/data/*
+!ml/data/manifest.csv
+web/node_modules/
+web/dist/
+web/public/wasm/
